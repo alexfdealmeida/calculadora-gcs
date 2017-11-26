@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+	<h:form id="form_resultado">
+		<p:panel id="panel" header="Calculadora" style="margin-bottom:10px;">
+			<p:messages id="messages" />
+
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="txt4" value="O primeiro número informado foi: " />
+				<h:outputText id="txt4" value="#{CalculadoraMB.bean.n1}" />
+
+				<h:outputLabel for="txt5" value="O operador informado foi: " />
+				<h:outputText id="txt5" value="#{CalculadoraMB.bean.operador}" />
+
+				<h:outputLabel for="txt6" value="O segundo número informado foi: " />
+				<h:outputText id="txt6" value="#{CalculadoraMB.bean.n2}" />
+
+
+				<h:outputLabel for="txt7" value="O resultado é: " />
+				<h:outputText id="resultado" value="#{CalculadoraMB.calcular()} " />
+
+				<p:commandButton update="form_resultado"
+					action="#{CalculadoraMB.calc}" value="Novo Cálculo">
+				</p:commandButton>
+
+			</h:panelGrid>
+		</p:panel>
+
+
+	</h:form>
+</h:body>
+
+</html>
+
+
+
+

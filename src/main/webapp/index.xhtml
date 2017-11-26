@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+<h:body>
+	<h:form id="form_calculadora">
+		<p:panel id="panel" header="Calculadora" style="margin-bottom:10px;">
+			<p:messages id="messages" />
+
+			<h:panelGrid columns="4" cellpadding="5">
+				<h:outputLabel for="txt1" value="Informe o 1º número: *" />
+				<p:inputText id="txt1" value="#{CalculadoraMB.bean.n1}"
+					required="true" label="Valor 1">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+				<p:message for="txt1" />
+				<h:outputText value="" />
+
+				<h:outputLabel for="txt3" value="Selecione um operador: *" />
+				<h:selectOneRadio id="txt3" value="#{CalculadoraMB.bean.operador}"
+					required="true" label="Operador">					
+					<f:selectItem itemLabel="+" itemValue="+" />					
+					<f:selectItem itemLabel="-" itemValue="-" />
+					<f:selectItem itemLabel="*" itemValue="*" />
+					<f:selectItem itemLabel="/" itemValue="/" />										
+				</h:selectOneRadio>
+				
+
+				<p:message for="txt3" />
+				<h:outputText value="#{CalculadoraMB.bean.operador}" />
+
+				<h:outputLabel for="txt2" value="Informe o 2º número: *" />
+				<p:inputText id="txt2" value="#{CalculadoraMB.bean.n2}"
+					required="true" label="Valor 2" />
+				<p:message for="txt2" />
+				<h:outputText value="" />
+
+
+				<p:commandButton update="form_calculadora"
+					action="#{CalculadoraMB.resultado}" value="Calcular">
+				</p:commandButton>
+
+			</h:panelGrid>
+		</p:panel>
+
+
+	</h:form>
+</h:body>
+
+</html>
+
+
+
+
