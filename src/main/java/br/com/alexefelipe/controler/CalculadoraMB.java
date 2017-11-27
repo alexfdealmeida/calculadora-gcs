@@ -43,6 +43,8 @@ public class CalculadoraMB {
 			result = bean.getN1() / bean.getN2();
 		} else if (bean.getOperador() == '*') {
 			result = bean.getN1() * bean.getN2();
+		} else if (bean.getOperador() == '^') {
+			result = Math.pow(bean.getN1(), bean.getN2());
 		}  
 
 		return result;
